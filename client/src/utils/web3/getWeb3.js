@@ -1,12 +1,22 @@
 import Web3 from "web3";
+import Biconomy from "@biconomy/mexa";
 
-const getWeb3 = () =>
+const getWeb3 = web3Torus =>
   new Promise((resolve, reject) => {
     // Wait for loading completion to avoid race conditions with web3 injection timing.
     window.addEventListener("load", async () => {
       // Modern dapp browsers...
       if (window.ethereum) {
-        const web3 = new Web3(window.ethereum);
+        const biconomy = new Biconomy(window.ethereum, {
+          dappId: "5e3db06f3a87df0ac4454512",
+          apiKey: "gKaGR4WUI.38121703-4858-4819-88e7-d2b20119dfbf"
+        });
+        // const biconomy = new Biconomy(web3Torus, {
+        //   dappId: "5e3db06f3a87df0ac4454512",
+        //   apiKey: "gKaGR4WUI.38121703-4858-4819-88e7-d2b20119dfbf"
+        // });
+        const web3 = new Web3(biconomy);
+        // const web3 = new Web3(window.ethereum);
         try {
           // Request account access if needed
           await window.ethereum.enable();
