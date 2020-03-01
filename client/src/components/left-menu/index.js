@@ -19,7 +19,7 @@ export default function LeftMenu({ userInfo, totalRewards }) {
     );
   return (
     <div className="left-menu p-3 shadow p-4 text-dark">
-      <h1>Pouch</h1>
+      <h1>Laxmi</h1>
       <div>
         <img
           src={userInfo.profileImage}
@@ -40,7 +40,7 @@ export default function LeftMenu({ userInfo, totalRewards }) {
       <div className="bottom-text">
         <h5>You have logged in through torus.</h5>
         <p>
-          Pouch is a peer to peer, non-custodial and gasless payments app with
+          Laxmi is a peer to peer, non-custodial and gasless payments app with
           an inbuilt reward system for transactions, powered by DeFi Protocols.
         </p>
       </div>
